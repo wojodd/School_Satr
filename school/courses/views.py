@@ -11,9 +11,9 @@ from .serializer import CourserSerializer
 # Create your views here.
 
 def Welcome (request : HttpRequest):
-    msg = 'welcome to your courses'
-    return HttpResponse(msg) 
+    name = {'name': 'Wojod'}
+    return render(request, 'courses/index.html', name  ) 
 
 def course_info(request : HttpRequest):
     course = Course.objects.all()
-    return render(request, 'courses/courses.html', {'course' : course})
+    return render(request, 'courses/courses.html', {'course' : course, 'name': 'Wojod'})
